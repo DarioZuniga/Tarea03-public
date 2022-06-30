@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <a href="index.html"></a>
+        <h1>Nuestros Clientes</h1>
+        <div th:href="${clientes!= null and !clientes.empty}">
+            <a th:if="@{/nuevoCliente}">Nuevo Cliente</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente : ${clientes}">
+                    <td th:text="${cliente.nombre}"></td>
+                    <td th:text="${cliente.apellidos}"></td>
+                    <td th:text="${cliente.correo}"></td>
+                    <td th:text="${cliente.telefono}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
