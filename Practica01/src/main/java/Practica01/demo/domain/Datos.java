@@ -10,10 +10,14 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="estado")
-public class Cliente implements Serializable {
+public class Datos implements Serializable {
     
     //Para utilizarlo en la generación de la llave primaria autoincremental
     private static final long serialVersionUID = 1L;
+
+    public static Object findById(Long codigoPostal) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +28,10 @@ public class Cliente implements Serializable {
     int poblacion;
     int cantidadCostas;
 
-    public Cliente() {  //Constructor default
+    public Datos() {  //Constructor default
     }
 
-    public Cliente(String nombreEstado, String capital, int poblacion, int cantidadCostas) {
+    public Datos(String nombreEstado, String capital, int poblacion, int cantidadCostas) {
         this.nombreEstado = nombreEstado;
         this.capital = capital;
         this.poblacion = poblacion;
